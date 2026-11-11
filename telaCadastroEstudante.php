@@ -25,6 +25,23 @@
             <label for="dataNascimento">Data de Nascimento:</label>
             <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
 
+            <h2>Cadastro de Endereço</h2>
+
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" id="logradouro" name="logradouro" required><br><br>
+
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" name="numero" required><br><br>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" name="bairro" required><br><br>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+
+            <label for="cep">Cep:</label>
+            <input type="text" id="cep" name="cep" required><br><br>
+
             <input type="submit" value="Cadastrar">
         </form>
     </body>
