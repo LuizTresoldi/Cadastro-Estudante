@@ -11,8 +11,8 @@
         <h1 class="mb-4">Cadastro de Estudante</h1>
         <form action="processaCadastro.php" method="post">
             <div class="mb-3">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" class="form-control" required>
+                <label for="nomeEstudante" class="form-label">Nome do estudante:</label>
+                <input type="text" id="nomeEstudante" name="nomeEstudante" class="form-control" required>
             </div>
 
             <div class="mb-3">
