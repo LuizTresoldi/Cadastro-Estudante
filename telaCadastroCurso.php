@@ -27,7 +27,12 @@
 
                 <div class="mb-3">
                     <label for="turno" class="form-label">Turno:</label>
-                    <input type="text" id="turno" name="turno" class="form-control" required>
+                    <select class="form-select" id="turno" name="turno" required>
+                        <option value="">Selecione o turno</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
                 </div>
 
                 <div class="mb-3">
