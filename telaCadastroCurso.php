@@ -22,7 +22,7 @@
 
                 <div class="mb-3">
                     <label for="cargaHoraria" class="form-label">Carga horária:</label>
-                    <input type="text" id="cargaHoraria" name="cargaHoraria" class="form-control" required>
+                    <input type="number" id="cargaHoraria" name="cargaHoraria" class="form-control" required>
                 </div>
 
                 <div class="mb-3">
@@ -32,7 +32,7 @@
 
                 <div class="mb-3">
                     <label for="qtdVagas" class="form-label">Quantidade de Vagas:</label>
-                    <input type="text" id="qtdVagas" name="qtdVagas" class="form-control" required>
+                    <input type="number" id="qtdVagas" name="qtdVagas" class="form-control" required>
                 </div>
 
                 <div class="mb-3">

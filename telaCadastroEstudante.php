@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Cadastro de Estudante</title>
-        <meta charset="UTF-8">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-	    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <div class="container my-4">
+
+<head>
+    <title>Cadastro de Estudante</title>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container my-4">
         <h1 class="mb-4">Cadastro de Estudante</h1>
-        <form action="processaCadastro.php" method="post">
+        <form action="processaEstudante.php" method="post">
             <div class="mb-3">
                 <label for="nomeEstudante" class="form-label">Nome do estudante:</label>
                 <input type="text" id="nomeEstudante" name="nomeEstudante" class="form-control" required>
@@ -17,7 +22,7 @@
 
             <div class="mb-3">
                 <label for="ra" class="form-label">RA:</label>
-                <input type="number" id="ra" name="ra" class="form-control" required>
+                <input type="text" id="ra" name="ra" class="form-control" required>
             </div>
 
             <div class="mb-3">
@@ -48,7 +53,7 @@
             </div>
 
             <div class="mb-3">
-                <label for="numero" class="form-label">Numero:</label>
+                <label for="numero" class="form-label">Número:</label>
                 <input type="text" id="numero" name="numero" class="form-control" required>
             </div>
 
@@ -63,11 +68,13 @@
             </div>
 
             <div class="mb-3">
-                <label for="cep" class="form-label">Cep:</label>
+                <label for="cep" class="form-label">CEP:</label>
                 <input type="text" id="cep" name="cep" class="form-control" required>
             </div>
 
             <input type="submit" value="Cadastrar" class="btn btn-primary">
         </form>
-    </body>
+    </div>
+</body>
+
 </html>

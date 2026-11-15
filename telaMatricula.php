@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Matriculas</title>
+    <title>Matrículas</title>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -13,7 +13,7 @@
 
 <body>
     <div class="container my-4">
-        <h1 class="mb-4">Matriculas</h1>
+        <h1 class="mb-4">Matrículas</h1>
         <form action="processaMatricula.php" method="post">
             <div class="mb-3">
                 <label for="estudanteId" class="form-label">Estudante:</label>
@@ -34,23 +34,23 @@
             <input type="submit" value="Matricular" class="btn btn-primary">
         </form>
         <div class="mt-5">
-        <h2>Matrículas Realizadas</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Estudante</th>
-                    <th>Curso</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Estudante exemplo</td>
-                    <td>Curso exemplo</td>
-                    <td><a href="#" class="btn btn-danger btn-sm">Cancelar Matrícula</a></td>
-                </tr>
-            </tbody>
-        </table>
+            <h2>Matrículas Realizadas</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Estudante</th>
+                        <th>Curso</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Estudante exemplo</td>
+                        <td>Curso exemplo</td>
+                        <td><a href="#" class="btn btn-danger btn-sm">Cancelar Matrícula</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
     </div>
