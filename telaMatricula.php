@@ -33,6 +33,26 @@
 
             <input type="submit" value="Matricular" class="btn btn-primary">
         </form>
+        <div class="mt-5">
+        <h2>Matrículas Realizadas</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Estudante</th>
+                    <th>Curso</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Estudante exemplo</td>
+                    <td>Curso exemplo</td>
+                    <td><a href="#" class="btn btn-danger btn-sm">Cancelar Matrícula</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+
     </div>
 </body>
 
