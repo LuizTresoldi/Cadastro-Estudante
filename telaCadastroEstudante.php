@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <?php include 'menuNavegacao.php'; ?>
     <div class="container my-4">
         <h1 class="mb-4">Cadastro de Estudante</h1>
         <form action="processaEstudante.php" method="post">
