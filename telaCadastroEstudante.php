@@ -15,6 +15,9 @@
     <?php include 'menuNavegacao.php'; ?>
     <div class="container my-4">
         <h1 class="mb-4">Cadastro de Estudante</h1>
+        <?php if (isset($_GET['sucesso'])): ?>
+            <div class="alert alert-success">Estudante cadastrado com sucesso!</div>
+        <?php endif; ?>
         <form action="processaEstudante.php" method="post">
             <div class="mb-3">
                 <label for="nomeEstudante" class="form-label">Nome do estudante:</label>
