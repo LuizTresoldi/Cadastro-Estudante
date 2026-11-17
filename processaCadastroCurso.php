@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $bulk = new MongoDB\Driver\BulkWrite;
     $bulk->insert($documento);
-    $manager->executeBulkWrite('cadastroCursos.cursos', $bulk);
+    $manager->executeBulkWrite('cadastroEstudantes.cursos', $bulk);
 
     header('Location: telaCadastroCurso.php?sucesso=1');
     exit;
