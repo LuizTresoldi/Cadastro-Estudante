@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         'cargaHoraria'   => trim($_POST['cargaHoraria']),
         'turno'          => trim($_POST['turno']),
         'qtdVagas'       => trim($_POST['qtdVagas']),
-        'descricao' => $_POST['descricao'],
+        'descricao'      => trim($_POST['descricao']),
     ];
 
     $bulk = new MongoDB\Driver\BulkWrite;
