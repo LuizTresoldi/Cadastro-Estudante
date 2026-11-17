@@ -21,7 +21,7 @@
         <form action="processaCadastroCurso.php" method="post">
             <div class="mb-3">
                 <label for="nomeCurso" class="form-label">Nome do curso:</label>
-                <input type="text" id="nomeCurso" name="nome" class="form-control" required>
+                <input type="text" id="nomeCurso" name="nomeCurso" class="form-control" required>
             </div>
 
             <div class="mb-3">
