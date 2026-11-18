@@ -1,3 +1,10 @@
+<?php
+require 'connectionMongoDB.php';
+
+$querry = new MongoDB\Driver\Query([]);
+$estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -77,7 +84,30 @@
             </div>
 
             <input type="submit" value="Cadastrar" class="btn btn-primary">
+        </div>
         </form>
+        <div class="mt-5 container my-4">
+            <h2>Estudantes Cadastrados</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Estudante</th>
+                        <th>Registro Acadêmico</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($estudantes as $estudante): ?>
+                        <tr>
+                            <td><?= htmlspecialchars($estudante->nome) ?></td>
+                            <td><?= htmlspecialchars($estudante->ra) ?></td>
+                            <td><a href="updateEstudante.php?id=<?= $estudante->_id ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="deleteEstudante.php?id=<?= $estudante->_id ?>" class="btn btn-danger btn-sm">Excluir</a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            </div>
     </div>
 </body>
 
