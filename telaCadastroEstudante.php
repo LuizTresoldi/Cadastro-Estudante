@@ -91,6 +91,9 @@ $estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
         <?php if (isset($_GET['atualizado'])): ?>
             <div class="alert alert-success">Estudante atualizado com sucesso!</div>
         <?php endif; ?>
+        <?php if (isset($_GET['deletado'])): ?>
+            <div class="alert alert-success">Estudante deletado com sucesso!</div>
+        <?php endif; ?>
         <table class="table table-striped">
             <thead>
                 <tr>
