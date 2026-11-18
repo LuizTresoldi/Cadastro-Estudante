@@ -4,6 +4,7 @@ require 'connectionMongoDB.php';
 $querry = new MongoDB\Driver\Query([]);
 $estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
 $cursos = $manager->executeQuery('cadastroEstudantes.cursos', $querry);
+$matriculas = $manager->executeQuery('cadastroEstudantes.matriculas', $querry)->toArray();
 ?>
 
 <!DOCTYPE html>
@@ -64,15 +65,30 @@ $cursos = $manager->executeQuery('cadastroEstudantes.cursos', $querry);
                     <tr>
                         <th>Estudante</th>
                         <th>Curso</th>
+                        <th>Data</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Estudante exemplo</td>
-                        <td>Curso exemplo</td>
-                        <td><a href="#" class="btn btn-danger btn-sm">Cancelar Matrícula</a></td>
-                    </tr>
+                    <?php foreach ($matriculas as $matricula):
+                         $estudante = current($manager->executeQuery('cadastroEstudantes.estudantes', new MongoDB\Driver\Query(['_id' => $matricula->estudanteId]))->toArray());
+                         $curso = current($manager->executeQuery('cadastroEstudantes.cursos', new MongoDB\Driver\Query(['_id' => $matricula->cursoId]))->toArray());
+                    ?>
+                        <tr>
+                            <td>
+                                <?= htmlspecialchars($estudante->nome) ?>
+                            </td>
+                            <td>
+                                <?= htmlspecialchars($curso->nomeCurso) ?>
+                            </td>
+                            <td>
+                                <?= date('d/m/Y', strtotime($matricula->dataMatricula)) ?>
+                            </td>
+                            <td>
+                                <a href="deletarMatricula.php?id=<?= $matricula->_id ?>" class="btn btn-danger btn-sm" onclick="return confirm('Cancelar esta matrícula?')">Cancelar Matrícula</a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
