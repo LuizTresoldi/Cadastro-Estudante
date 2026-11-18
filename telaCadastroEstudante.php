@@ -109,7 +109,7 @@ $estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
                         <td><?= htmlspecialchars($estudante->ra) ?></td>
                         <td><a href="updateEstudante.php?id=<?= $estudante->_id ?>"
                                 class="btn btn-warning btn-sm">Editar</a>
-                            <a href="deleteEstudante.php?id=<?= $estudante->_id ?>"
+                            <a href="deleteEstudante.php?id=<?= $estudante->_id ?>" onclick="return confirm('Excluir este estudante?')"
                                 class="btn btn-danger btn-sm">Excluir</a>
                         </td>
                     </tr>
