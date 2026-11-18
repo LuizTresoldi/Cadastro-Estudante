@@ -60,6 +60,9 @@ $matriculas = $manager->executeQuery('cadastroEstudantes.matriculas', $querry)->
         </form>
         <div class="mt-5">
             <h2>Matrículas Realizadas</h2>
+            <?php if (isset($_GET['deletado'])): ?>
+                 <div class="alert alert-success">Matrícula cancelada com sucesso!</div>
+            <?php endif; ?>
             <table class="table table-striped">
                 <thead>
                     <tr>
