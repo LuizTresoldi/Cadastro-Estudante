@@ -84,30 +84,36 @@ $estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
             </div>
 
             <input type="submit" value="Cadastrar" class="btn btn-primary">
-        </div>
-        </form>
-        <div class="mt-5 container my-4">
-            <h2>Estudantes Cadastrados</h2>
-            <table class="table table-striped">
-                <thead>
+    </div>
+    </form>
+    <div class="mt-5 container my-4">
+        <h2>Estudantes Cadastrados</h2>
+        <?php if (isset($_GET['atualizado'])): ?>
+            <div class="alert alert-success">Estudante atualizado com sucesso!</div>
+        <?php endif; ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Estudante</th>
+                    <th>Registro Acadêmico</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($estudantes as $estudante): ?>
                     <tr>
-                        <th>Estudante</th>
-                        <th>Registro Acadêmico</th>
-                        <th>Ações</th>
+                        <td><?= htmlspecialchars($estudante->nome) ?></td>
+                        <td><?= htmlspecialchars($estudante->ra) ?></td>
+                        <td><a href="updateEstudante.php?id=<?= $estudante->_id ?>"
+                                class="btn btn-warning btn-sm">Editar</a>
+                            <a href="deleteEstudante.php?id=<?= $estudante->_id ?>"
+                                class="btn btn-danger btn-sm">Excluir</a>
+                        </td>
                     </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($estudantes as $estudante): ?>
-                        <tr>
-                            <td><?= htmlspecialchars($estudante->nome) ?></td>
-                            <td><?= htmlspecialchars($estudante->ra) ?></td>
-                            <td><a href="updateEstudante.php?id=<?= $estudante->_id ?>" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="deleteEstudante.php?id=<?= $estudante->_id ?>" class="btn btn-danger btn-sm">Excluir</a></td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            </div>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
     </div>
 </body>
 
