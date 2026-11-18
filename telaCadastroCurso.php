@@ -1,3 +1,10 @@
+<?php
+require 'connectionMongoDB.php';
+
+$querry = new MongoDB\Driver\Query([]);
+$cursos = $manager->executeQuery('cadastroEstudantes.cursos', $querry);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -56,6 +63,38 @@
 
             <input type="submit" value="Cadastrar" class="btn btn-primary">
         </form>
+
+        <div class="mt-5 container my-4">
+        <h2>Cursos Cadastrados</h2>
+        <?php if (isset($_GET['atualizado'])): ?>
+            <div class="alert alert-success">Curso atualizado com sucesso!</div>
+        <?php endif; ?>
+        <?php if (isset($_GET['deletado'])): ?>
+            <div class="alert alert-success">Curso deletado com sucesso!</div>
+        <?php endif; ?>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Curso</th>
+                    <th>Código</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($cursos as $curso): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($curso->nomeCurso) ?></td>
+                        <td><?= htmlspecialchars($curso->codigo) ?></td>
+                        <td><a href="updateCurso.php?id=<?= $curso->_id ?>"
+                                class="btn btn-warning btn-sm">Editar</a>
+                            <a href="deleteCurso.php?id=<?= $curso->_id ?>" onclick="return confirm('Excluir este curso?')"
+                                class="btn btn-danger btn-sm">Excluir</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
     </div>
 </body>
 
