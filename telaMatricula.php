@@ -1,3 +1,11 @@
+<?php
+require 'connectionMongoDB.php';
+
+$querry = new MongoDB\Driver\Query([]);
+$estudantes = $manager->executeQuery('cadastroEstudantes.estudantes', $querry);
+$cursos = $manager->executeQuery('cadastroEstudantes.cursos', $querry);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -20,7 +28,9 @@
                 <label for="estudanteId" class="form-label">Estudante:</label>
                 <select class="form-select" id="estudanteId" name="estudanteId">
                     <option value="">Selecione um estudante</option>
-                    <option value="1">Estudante exemplo</option>
+                    <?php foreach ($estudantes as $estudante): ?>
+                        <option value="<?= $estudante->_id ?>"><?= htmlspecialchars($estudante->nome) ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
@@ -28,7 +38,9 @@
                 <label for="cursoId" class="form-label">Curso:</label>
                 <select class="form-select" id="cursoId" name="cursoId">
                     <option value="">Selecione um curso</option>
-                    <option value="1">Curso exemplo</option>
+                    <?php foreach ($cursos as $curso): ?>
+                        <option value="<?= $curso->_id ?>"><?= htmlspecialchars($curso->nomeCurso) ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
 
