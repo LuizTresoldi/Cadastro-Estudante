@@ -23,6 +23,17 @@ $cursos = $manager->executeQuery('cadastroEstudantes.cursos', $querry);
     <?php include 'menuNavegacao.php'; ?>
     <div class="container my-4">
         <h1 class="mb-4">Matrículas</h1>
+        <?php if (isset($_GET['sucesso'])): ?>
+            <div class="alert alert-success">A matrícula foi realizada com sucesso!</div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['erro']) && $_GET['erro'] == 'campoVazio'): ?>
+            <div class="alert alert-danger">Selecione o estudante e o curso!</div>
+        <?php endif; ?>
+
+        <?php if (isset($_GET['erro']) && $_GET['erro'] == 'campoDuplicado'): ?>
+            <div class="alert alert-warning">Esse estudante já foi matriculado nesse curso!</div>
+        <?php endif; ?>
         <form action="processaMatricula.php" method="post">
             <div class="mb-3">
                 <label for="estudanteId" class="form-label">Estudante:</label>
